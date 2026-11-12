@@ -1,0 +1,273 @@
+#view-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.sales-card {
+  background: linear-gradient(135deg, #50b5a2, #1d8a6b);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pending-udhar-card {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.total-bills-card {
+  background: linear-gradient(135deg, #ffb300, #ff8f00);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.live-sales-chart {
+  background: linear-gradient(135deg, #8a2be2, #5c4d9f);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quick-action-card {
+  background: linear-gradient(135deg, #50b5a2, #1d8a6b);
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#view-2 {
+  padding: 20px;
+}
+
+.input-field {
+  border: 2px solid #50b5a2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.qr-scanner-button {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.generate-bill-button {
+  background: linear-gradient(135deg, #ffb300, #ff8f00);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.send-bill-button {
+  background: linear-gradient(135deg, #8a2be2, #5c4d9f);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#view-3 {
+  padding: 20px;
+}
+
+#app-search-bar {
+  border: 2px solid #50b5a2;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.customer-list-item {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.floating-cta {
+  background: linear-gradient(135deg, #ffb300, #ff8f00);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#view-4 {
+  padding: 20px;
+}
+
+.shopkeeper-info {
+  background: linear-gradient(135deg, #50b5a2, #1d8a6b);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.transaction-history-item {
+  background: linear-gradient(135deg, #8a2be2, #5c4d9f);
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.download-report-button {
+  background: linear-gradient(135deg, #ffb300, #ff8f00);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.logout-button {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#app-modal {
+  background: linear-gradient(135deg, #50b5a2, #1d8a6b);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#notice-banner {
+  background: linear-gradient(135deg, #ffb300, #ff8f00);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+/* === SARFEALAM COLORFUL MODERN SHELL & CONTRAST LOCK === */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh;
+  background: radial-gradient(circle at 15% 15%, #1e1b4b 0%, #0f172a 48%, #020617 100%) !important;
+  color: #f8fafc !important;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+button, .btn {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 14px;
+  font-weight: 700; cursor: pointer; min-height: 44px; padding: 10px 14px;
+  box-shadow: 0 4px 14px rgba(2,132,199,0.25);
+}
+input, select, textarea {
+  background-color: rgba(30,41,59,0.92) !important; color: #f8fafc !important;
+  border: 1.5px solid #38bdf8 !important; border-radius: 12px !important;
+  padding: 11px 13px !important; font-size: 14px !important; width: 100%;
+}
+input::placeholder, textarea::placeholder { color: #94a3b8 !important; }
+#splash-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: radial-gradient(circle at center, #1e3a8a 0%, #0f172a 65%, #020617 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+#splash-screen.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+.splash-badge {
+  width: 76px; height: 76px; border-radius: 22px;
+  background: linear-gradient(135deg, #0ea5e9, #10b981, #8b5cf6);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 900; color: #ffffff;
+  box-shadow: 0 12px 30px rgba(14,165,233,0.45);
+}
+#view-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.login-card, .sf-card {
+  width: 100%; max-width: 420px;
+  background: rgba(15, 23, 42, 0.86);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56,189,248,0.25); border-radius: 18px; padding: 16px;
+}
+.sf-label { display: block; font-size: 12px; color: #cbd5e1; margin-bottom: 6px; font-weight: 700; }
+#app-header {
+  position: fixed; top: 0; left: 0; right: 0; height: 58px; z-index: 500;
+  background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(56,189,248,0.25);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 12px;
+}
+.icon-btn {
+  background: #1e293b !important; min-height: 38px !important; width: 40px; padding: 6px !important;
+  display: flex; align-items: center; justify-content: center; box-shadow: none !important;
+}
+.header-pill {
+  background: linear-gradient(135deg, rgba(16,185,129,0.22), rgba(14,165,233,0.22));
+  border: 1px solid #10b981; color: #34d399;
+  padding: 5px 11px; border-radius: 20px; font-size: 12px; font-weight: 800;
+}
+.notice-pill {
+  background: linear-gradient(90deg, rgba(245,158,11,0.2), rgba(234,88,12,0.2));
+  border: 1px solid #f59e0b; color: #fde68a; border-radius: 12px;
+  padding: 8px 12px; font-size: 12px; font-weight: 700; margin-bottom: 10px;
+}
+#app-main { padding: 70px 12px 92px 12px; max-width: 520px; margin: 0 auto; }
+#floating-cta {
+  position: fixed !important; right: 16px !important; bottom: 82px !important; z-index: 490;
+  width: 52px; height: 52px; border-radius: 50% !important; padding: 0 !important;
+  background: linear-gradient(135deg, #10b981, #0ea5e9) !important;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(16,185,129,0.45) !important;
+}
+#bottom-nav {
+  position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important;
+  height: 68px; z-index: 500;
+  background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(56,189,248,0.25);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 6px 8px;
+}
+.nav-btn {
+  background: transparent !important; border: none !important; color: #94a3b8 !important;
+  min-height: 52px !important; padding: 4px !important; box-shadow: none !important;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  font-size: 11px !important; font-weight: 700;
+}
+.nav-btn.active-tab {
+  background: linear-gradient(135deg, rgba(14,165,233,0.22), rgba(139,92,246,0.22)) !important;
+  color: #38bdf8 !important; border-radius: 12px;
+}
+#profile-drawer {
+  position: fixed; top: 0; left: 0; bottom: 0; width: 80%; max-width: 310px;
+  background: #0f172a; border-right: 1px solid #1e293b; z-index: 9000;
+  transform: translateX(-105%); transition: transform 0.25s ease;
+  padding: 20px 16px; overflow-y: auto;
+}
+#profile-drawer.open { transform: translateX(0); }
+.drawer-btn { width: 100%; text-align: left; margin-bottom: 8px; background: #1e293b !important; box-shadow: none !important; }
+#drawer-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 8999; display: none; }
+#drawer-backdrop.open { display: block; }
+#app-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 9500; display: none; align-items: center; justify-content: center; padding: 16px; }
+#app-modal.open { display: flex; }
+.modal-card { width: 100%; max-width: 380px; background: #111827; border: 1px solid #38bdf8; border-radius: 18px; padding: 20px; color: #f8fafc; }
