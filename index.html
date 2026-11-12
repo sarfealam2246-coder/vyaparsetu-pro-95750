@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>VyaparSetu Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+  <!-- 1. Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-badge">VY</div>
+    <h1 style="margin:14px 0 4px 0;font-size:24px;font-weight:800;color:#ffffff;">VyaparSetu Pro</h1>
+    <p style="margin:0;font-size:12px;color:#38bdf8;letter-spacing:1.2px;">VERSION 1.0 • CLOUD READY</p>
+  </div>
+
+  <!-- 2. Slide-out Profile Drawer -->
+  <div id="drawer-backdrop" onclick="FactoryNav.closeDrawer()"></div>
+  <aside id="profile-drawer">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+      <strong style="font-size:17px;color:#ffffff;">VyaparSetu Pro</strong>
+      <button type="button" onclick="FactoryNav.closeDrawer()" style="min-height:34px;padding:4px 10px;background:#1e293b !important;">X</button>
+    </div>
+    <div class="sf-card" style="margin-bottom:14px;">
+      <div id="drawer-user-name" style="font-size:16px;font-weight:800;color:#ffffff;">Guest User</div>
+      <div id="drawer-user-phone" style="font-size:13px;color:#94a3b8;margin-top:4px;">Not signed in</div>
+    </div>
+    <button type="button" onclick="FactoryNav.closeDrawer();FactoryNav.switchTab(1);" class="drawer-btn">Home Dashboard</button>
+    <button type="button" onclick="FactoryNav.closeDrawer();FactoryNav.switchTab(2);" class="drawer-btn">Main Workspace</button>
+    <button type="button" onclick="FactoryNav.closeDrawer();FactoryNav.switchTab(3);" class="drawer-btn">Records & Insights</button>
+    <button type="button" onclick="FactoryNav.closeDrawer();FactoryNav.switchTab(4);" class="drawer-btn">Profile & History</button>
+    <button type="button" onclick="FactoryNav.logout()" style="width:100%;margin-top:16px;background:#dc2626 !important;">Log Out</button>
+  </aside>
+
+  <!-- 3. Universal Modal Container -->
+  <div id="app-modal"></div>
+
+  <!-- 4. Login View -->
+  <section id="view-login">
+    <div class="login-card">
+      <div class="splash-badge" style="margin:0 auto 14px auto;">VY</div>
+      <h2 style="margin:0 0 6px 0;text-align:center;font-size:22px;font-weight:800;color:#ffffff;">Welcome to VyaparSetu Pro</h2>
+      <p style="margin:0 0 18px 0;text-align:center;font-size:13px;color:#cbd5e1;">Sign in to sync your account with cloud</p>
+      <label class="sf-label">Full Name / Business Name</label>
+      <input id="login-name" type="text" placeholder="Enter your name" style="width:100%;margin-bottom:12px;">
+      <label class="sf-label">10-Digit Mobile Number</label>
+      <input id="login-phone" type="tel" maxlength="10" placeholder="Enter 10-digit mobile" style="width:100%;margin-bottom:16px;">
+      <button id="login-submit-btn" type="button" onclick="FactoryNav.submitLogin()" style="width:100%;background:linear-gradient(135deg,#10b981,#0ea5e9) !important;">Continue</button>
+    </div>
+  </section>
+
+  <!-- 5. Authenticated App Shell -->
+  <div id="app-shell" style="display:none;">
+    <header id="app-header">
+      <button type="button" onclick="FactoryNav.openDrawer()" class="icon-btn" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <span style="font-size:16px;font-weight:800;color:#ffffff;">VyaparSetu Pro</span>
+      <span id="header-badge" class="header-pill">Rs. 0</span>
+    </header>
+
+    <main id="app-main">
+      <div id="notice-banner" style="display:none;" class="notice-pill"></div>
+      <div style="margin-bottom:12px;">
+        <input id="app-search-bar" type="search" placeholder="Search items, records, or actions..." oninput="if(window.onSearchInput) window.onSearchInput(this.value);">
+      </div>
+      <section id="view-1" class="tab-view"></section>
+      <section id="view-2" class="tab-view" style="display:none;"></section>
+      <section id="view-3" class="tab-view" style="display:none;"></section>
+      <section id="view-4" class="tab-view" style="display:none;"></section>
+      <section id="view-detail" class="tab-view" style="display:none;"></section>
+    </main>
+
+    <button id="floating-cta" type="button" onclick="if(window.onFloatingAction) window.onFloatingAction(); else FactoryNav.switchTab(2);" aria-label="Quick Action">
+      <i data-lucide="plus"></i>
+    </button>
+
+    <nav id="bottom-nav">
+      <button id="nav-1" type="button" onclick="FactoryNav.switchTab(1)" class="nav-btn active-tab">
+        <i data-lucide="home"></i><span>Home</span>
+      </button>
+      <button id="nav-2" type="button" onclick="FactoryNav.switchTab(2)" class="nav-btn">
+        <i data-lucide="layout-grid"></i><span>Actions</span>
+      </button>
+      <button id="nav-3" type="button" onclick="FactoryNav.switchTab(3)" class="nav-btn">
+        <i data-lucide="book-open"></i><span>Records</span>
+      </button>
+      <button id="nav-4" type="button" onclick="FactoryNav.switchTab(4)" class="nav-btn">
+        <i data-lucide="user"></i><span>Profile</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
