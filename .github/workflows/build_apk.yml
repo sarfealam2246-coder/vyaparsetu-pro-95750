@@ -1,0 +1,40 @@
+name: Build Real Android APK Engine
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install ImageMagick for Custom App Icon
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+
+      - name: Compile Universal High-Speed Android APK
+        run: bash build.sh
+
+      - name: Publish Production APK to GitHub Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.0
+          name: "Production Android APK v1.0.0"
+          draft: false
+          prerelease: false
+          files: dist/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
